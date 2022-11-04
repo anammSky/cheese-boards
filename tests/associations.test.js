@@ -1,14 +1,14 @@
-const seed = require("../db/seed");
+const test_seed = require("./test_seed");
 const { User, Cheese, Board } = require("../models");
 const db = require("../db/db");
 
 beforeEach(async () => {
   await db.sync({ force: true });
-  await seed();
+  await test_seed();
 });
-//   afterEach(async () => {
-//     await db.sync({ force: true });
-//   });
+afterEach(async () => {
+  await db.sync({ force: true });
+});
 
 describe("Checks the association between Users and Boards", () => {
   // Multiple Boards can be added to a User.
