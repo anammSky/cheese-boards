@@ -1,13 +1,14 @@
 const { User, Cheese, Board } = require("../models");
 const db = require("../db/db");
 
+beforeEach(async () => {
+  await db.sync({ force: true });
+});
+afterEach(async () => {
+  await db.sync({ force: true });
+});
+
 describe("Checks the models are created correctly", () => {
-  beforeEach(async () => {
-    await db.sync({ force: true });
-  });
-  afterEach(async () => {
-    await db.sync({ force: true });
-  });
   const models = Object.keys(db.models);
 
   test("database class should contain User model", () => {
@@ -24,12 +25,6 @@ describe("Checks the models are created correctly", () => {
 });
 
 describe("User Model", () => {
-  beforeEach(async () => {
-    await db.sync({ force: true });
-  });
-  afterEach(async () => {
-    await db.sync({ force: true });
-  });
   test("can insert data into table", async () => {
     await User.create({
       name: "Bruce",
@@ -42,12 +37,6 @@ describe("User Model", () => {
 });
 
 describe("Cheese Model", () => {
-  beforeEach(async () => {
-    await Cheese.sync({ force: true });
-  });
-  afterEach(async () => {
-    await db.sync({ force: true });
-  });
   test("can insert data into table", async () => {
     await Cheese.create({
       title: "Parmesan",
@@ -60,12 +49,6 @@ describe("Cheese Model", () => {
 });
 
 describe("Board Model", () => {
-  beforeEach(async () => {
-    await Board.sync({ force: true });
-  });
-  afterEach(async () => {
-    await db.sync({ force: true });
-  });
   test("can insert data into table", async () => {
     await Board.create({
       type: "The French Experience",
