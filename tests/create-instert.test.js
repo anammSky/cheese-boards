@@ -34,6 +34,19 @@ describe("User Model", () => {
 
     expect(newUser[0].getDataValue("name")).toMatch("Bruce");
   });
+  test("should not create users with the same email", async () => {
+    await User.create({
+      name: "Bruce",
+      email: "iamthenight@gmail.com",
+    });
+
+    expect(async () => {
+      await User.create({
+        name: "Bruce",
+        email: "iamthenight@gmail.com",
+      });
+    }).rejects.toThrow();
+  });
 });
 
 describe("Cheese Model", () => {
