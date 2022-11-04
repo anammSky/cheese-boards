@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings --experimental-specifier-resolution=node' npx jest --verbose",
+    "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings --experimental-specifier-resolution=node' npx jest --verbose --runInBand",
     "main": "cd src && node main.js",
     "seed": "cd db && node seed.js"
   },
