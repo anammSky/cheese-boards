@@ -1,5 +1,5 @@
-const { User, Cheese, Board } = require("../models");
-const db = require("../db/db");
+import { User, Cheese, Board } from "../models";
+import db from "../db/db";
 
 async function test_seed() {
   // ******* WRITE TESTING DATA HERE ****** //
@@ -154,4 +154,4 @@ async function test_seed() {
   ]);
 }
 
-module.exports = test_seed;
+export default test_seed;

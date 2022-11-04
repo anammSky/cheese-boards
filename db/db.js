@@ -1,10 +1,13 @@
-const { Sequelize } = require("sequelize");
-const path = require("path");
+import { Sequelize } from "sequelize";
+import { join } from "path";
+import * as url from "url";
+
+const _dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
 const db = new Sequelize({
   dialect: "sqlite",
-  storage: path.join(__dirname, "theCheeses.sqlite"),
+  storage: join(_dirname, "theCheeses.sqlite"),
   logging: false,
 });
 
-module.exports = db;
+export default db;

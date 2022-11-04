@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "A Sequelize DB for users to collect cheeses and place them on boards",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "jest --watchAll",
+    "test": "NODE_OPTIONS='--experimental-vm-modules --no-warnings --experimental-specifier-resolution=node' npx jest --verbose",
     "main": "cd src && node main.js",
     "seed": "cd db && node seed.js"
-
   },
   "repository": {
     "type": "git",

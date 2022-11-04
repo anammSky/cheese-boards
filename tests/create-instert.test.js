@@ -1,5 +1,5 @@
-const { User, Cheese, Board } = require("../models");
-const db = require("../db/db");
+import { User, Cheese, Board } from "../models";
+import db from "../db/db";
 
 beforeEach(async () => {
   await db.sync({ force: true });

@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require("sequelize");
-const db = require("../db/db");
+import { Model, DataTypes } from "sequelize";
+import db from "../db/db";
 
 class Cheese extends Model {}
 
@@ -22,4 +22,4 @@ Cheese.init(
   { sequelize: db }
 );
 
-module.exports = Cheese;
+export default Cheese;

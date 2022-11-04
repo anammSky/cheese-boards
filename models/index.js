@@ -1,6 +1,6 @@
-const Cheese = require("./Cheese.model");
-const Board = require("./Board.model");
-const User = require("./User.model");
+import Cheese from "./Cheese.model";
+import Board from "./Board.model";
+import User from "./User.model";
 
 // Users < - > Boards: one-to-many
 // multiple Boards can be added to a User
@@ -13,4 +13,4 @@ Board.belongsTo(User);
 Board.belongsToMany(Cheese, { through: "Cheeseboard" });
 Cheese.belongsToMany(Board, { through: "Cheeseboard" });
 
-module.exports = { Cheese, Board, User };
+export { Cheese, Board, User };

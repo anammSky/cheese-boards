@@ -1,6 +1,6 @@
-const test_seed = require("./test_seed");
-const { User, Cheese, Board } = require("../models");
-const db = require("../db/db");
+import test_seed from "./test_seed";
+import { User, Cheese, Board } from "../models";
+import db from "../db/db";
 
 beforeEach(async () => {
   //empties the db
